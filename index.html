@@ -3,17 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق تلغرام</title>
+    <title>تطبيق الرسائل العامة لمارع</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div id="chat-container">
-        <h2>رسائل المجموعة</h2>
-        <div id="messages"></div>
-        <button id="fetchMessages">جلب الرسائل</button>
+    <!-- شاشة تسجيل الدخول -->
+    <div id="login-container">
+        <h2>أدخل اسمك</h2>
+        <input type="text" id="usernameInput" placeholder="أدخل اسمك هنا...">
+        <button id="startChat">ابدأ المحادثة</button>
     </div>
+
+    <!-- شاشة المحادثة -->
+    <div id="chat-container" style="display: none;">
+        <h2>رسائل التطبيق</h2>
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="اكتب رسالتك هنا...">
+        <button id="sendMessage">إرسال</button>
+    </div>
+    
+    
+    
 
     <script src="script.js"></script>
 </body>
-</html>
+
+    </html>
