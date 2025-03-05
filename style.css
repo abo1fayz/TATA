@@ -1,57 +1,177 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+/* إعادة تعيين الأساسيات */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* خلفية الصفحة */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #fff;
+}
+
+/* حاوية المحادثة */
 #chat-container {
-    width: 80%;
-    margin: 50px auto;
+    width: 100%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+/* عنوان المحادثة */
 h2 {
     text-align: center;
+    font-size: 24px;
+    font-weight: 500;
     margin-bottom: 20px;
+    color: #eaeaea;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
+/* حاوية الرسائل */
 #messages {
     max-height: 400px;
     overflow-y: auto;
-    border-top: 2px solid #eee;
-    padding-top: 10px;
+    padding: 10px;
+    border-top: 2px solid rgba(255, 255, 255, 0.2);
+    margin-bottom: 20px;
 }
 
+/* تصميم الرسائل */
 .message {
-    background-color: #e0f7fa;
+    background-color: #1e3a8a;
     margin: 10px 0;
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 10px;
     font-size: 16px;
-    color: #333;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
 }
 
 .message span {
     font-weight: bold;
+    color: #FFD700;
 }
 
+.message:hover {
+    transform: scale(1.05);
+    background-color: #2563eb;
+}
+
+/* زر الإرسال */
 button {
-    display: block;
     width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background-color: #007bff;
-    color: white;
+    padding: 15px;
+    background-color: #4CAF50;
     border: none;
-    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
     cursor: pointer;
-    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #45a049;
+    transform: scale(1.05);
 }
+
+button:active {
+    background-color: #388e3c;
+    transform: scale(1);
+}
+
+/* حقل النص */
+#messageInput {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+#messageInput:focus {
+    border-color: #4CAF50;
+}
+
+/* حقل اسم المرسل */
+#senderName {
+    width: calc(100% - 20px);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: #fff;
+    font-size: 16px;
+    margin-bottom: 15px;
+    outline: none;
+    color: #333;
+    transition: border 0.3s ease;
+}
+
+#senderName:focus {
+    border-color: #4CAF50;
+}
+
+/* مظهر حواف */
+input:focus, button:focus {
+    outline: none;
+}
+
+/* إخفاء أشرطة التمرير عند عدم الحاجة */
+#messages::-webkit-scrollbar {
+    display: none;
+}
+
+#usernameInput {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  background-color: #f9f9f9;
+  font-size: 16px;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s ease;
+}
+
+#usernameInput:focus {
+  border-color: #4CAF50;
+  background-color: #fff;
+  box-shadow: 0 0 8px rgba(76, 175, 80, 0.4);
+  outline: none;
+}
+
+#usernameInput::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+#usernameInput:hover {
+  border-color: #76c7c0;
+}
+
+
+/* تصميم وقت الرسالة */
+.message-time {
+    font-size: 12px;
+    color: #ccc;
+    margin-left: 5px;
+    }
