@@ -13,7 +13,7 @@ const loginContainer = document.getElementById('login-container');
 // حاوية عرض الرسائل
 const messagesContainer = document.getElementById('messages');
 
-// تخزين آخر `update_id` تم استلامه
+// تخزين آخر update_id تم استلامه
 let lastUpdateId = 0;
 
 // استرجاع اسم المستخدم من localStorage
@@ -44,19 +44,19 @@ function displayMessage(message) {
     // تحويل الوقت من 24 ساعة إلى 12 ساعة
     hours = hours % 12;
     hours = hours ? hours : 12; // إذا كانت الساعة 0، اجعلها 12
-    const formattedTime = `${hours}:${minutes} ${ampm}`;
+    const formattedTime = ${hours}:${minutes} ${ampm};
 
     // إضافة الرسالة مع التاريخ والوقت
-    messageElement.innerHTML = `
+    messageElement.innerHTML = 
         <span>${message.from.first_name}:</span> ${message.text} 
         <span class="message-time">(${formattedTime})</span>
-    `;
+    ;
     messagesContainer.appendChild(messageElement);
 }
 
 // دالة لجلب الرسائل من Telegram API
 function fetchMessages() {
-    fetch(`https://api.telegram.org/bot${botToken}/getUpdates?offset=${lastUpdateId + 1}`)
+    fetch(https://api.telegram.org/bot${botToken}/getUpdates?offset=${lastUpdateId + 1})
         .then(response => response.json())
         .then(data => {
             const messages = data.result;
@@ -76,7 +76,7 @@ function fetchMessages() {
 
 // دالة لإرسال رسالة إلى Telegram
 function sendMessageToTelegram(messageText) {
-    fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
+    fetch(https://api.telegram.org/bot${botToken}/sendMessage, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -111,7 +111,6 @@ startChatButton.addEventListener('click', function() {
         alert("يرجى إدخال اسمك");
     }
 });
-
 // عند الضغط على زر "إرسال" في واجهة المحادثة
 sendMessageButton.addEventListener('click', function() {
     const messageText = messageInput.value.trim();
